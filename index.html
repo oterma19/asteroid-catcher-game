@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no" />
+<title>Поймай астероид</title>
+<meta name="description" content="Учебная браузерная игра: лови астероиды кораблём, набирай очки и ставь рекорды." />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="game-wrap">
+    <header class="topbar">
+      <h1 class="title">🚀 Поймай астероид</h1>
+      <div class="hud" id="hud">
+        <div class="hud-item">
+          <span class="hud-label">Очки</span>
+          <span class="hud-value" id="scoreValue">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Жизни</span>
+          <span class="hud-value" id="livesValue">❤❤❤</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Время</span>
+          <span class="hud-value" id="timeValue">60</span>
+        </div>
+      </div>
+    </header>
+
+    <div class="stage">
+      <canvas id="gameCanvas"></canvas>
+
+      <!-- Start screen -->
+      <div class="overlay" id="startScreen">
+        <div class="panel">
+          <h2>Как играть</h2>
+          <ul class="rules">
+            <li>Управляй кораблём и лови падающие астероиды</li>
+            <li>Клавиши ← → или A / D — движение по горизонтали</li>
+            <li>На телефоне используй кнопки на экране</li>
+            <li>Пойманный астероид — +1 очко</li>
+            <li>Пропущенный астероид — минус 1 жизнь</li>
+            <li>У тебя 3 жизни и 60 секунд времени</li>
+          </ul>
+          <button class="btn btn-primary" id="startBtn">Старт (или Space)</button>
+          <p class="best-score">Лучший результат: <span id="bestScoreStart">0</span></p>
+        </div>
+      </div>
+
+      <!-- Game over screen -->
+      <div class="overlay hidden" id="gameOverScreen">
+        <div class="panel">
+          <h2>Игра окончена</h2>
+          <p class="reason" id="reasonText">Время вышло</p>
+          <p class="final-score">Ваш счёт: <span id="finalScore">0</span></p>
+          <p class="best-score">Лучший результат: <span id="bestScoreEnd">0</span></p>
+          <button class="btn btn-primary" id="restartBtn">Играть снова</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Touch controls -->
+    <div class="touch-controls" id="touchControls">
+      <button class="ctrl-btn" id="leftBtn" aria-label="Влево">◀</button>
+      <button class="ctrl-btn" id="rightBtn" aria-label="Вправо">▶</button>
+    </div>
+
+    <footer class="footer">
+      Учебный проект: веб-игра, созданная в режиме агентной разработки.
+    </footer>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
