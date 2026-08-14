@@ -54,7 +54,9 @@ README.md    — описание проекта
 
 ## Опубликованная версия
 
-Играть онлайн: _ссылка будет добавлена после деплоя_
+Играть онлайн: https://oterma19.github.io/asteroid-catcher-game/
+
+Репозиторий с исходным кодом: https://github.com/oterma19/asteroid-catcher-game
 
 ---
 
